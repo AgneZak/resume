@@ -76,7 +76,7 @@ function App() {
               professional with a Bachelor's degree focused in Graphic Design
               from Vilnius Academy of Arts. Experience in building
               object-oriented web applications in JavaScript, HTML5, and CSS,
-              that scale and perform well on all devices. Right now studying
+              that perform well on all devices. Right now studying
               React.js and Vue.js
             </p>
           </ContentBox>
