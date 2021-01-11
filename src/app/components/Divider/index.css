@@ -1,0 +1,16 @@
+.underline {
+  display: flex;
+  align-items: center;
+}
+
+.green-line {
+  background-color: #7abcac;
+  width: 72px;
+  height: 10px;
+}
+
+.grey-line {
+  background-color: #dcdcdc;
+  height: 4px;
+  width: 100%;
+}

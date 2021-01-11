@@ -1,0 +1,22 @@
+h4 {
+  text-transform: uppercase;
+  font-size: 24px;
+}
+
+.content-box:not(.experience-content) {
+  width: 290px;
+}
+
+.content-box:first-child {
+  margin-right: 66px;
+}
+
+.about-content,
+.skills-content {
+  flex: 2;
+}
+
+.education-content {
+  font-size: 16px;
+  font-weight: 700;
+}

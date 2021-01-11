@@ -1,0 +1,15 @@
+.contact-content section {
+  margin: 32px 0;
+  width: 248px;
+  text-align: center;
+}
+
+.contact-content section span {
+  font-weight: 700;
+  font-size: 24px;
+  color: #ffffff;
+  background-color: #000000;
+  text-transform: uppercase;
+  display: inline-block;
+  width: 100%;
+}

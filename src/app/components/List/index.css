@@ -1,0 +1,29 @@
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.experience-content ul {
+  padding-left: 17px;
+  list-style: disc;
+}
+
+.content-box li:not(.experience-content li) {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+}
+
+.personal-skills li,
+.technical-skills li {
+  text-transform: uppercase;
+  margin: 32px 0;
+}
+
+.links-content li {
+  opacity: 0.5;
+}
+
+.links-content li:hover {
+  opacity: 1;
+}

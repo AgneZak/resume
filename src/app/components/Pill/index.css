@@ -1,0 +1,17 @@
+.pill {
+  display: inline-block;
+  padding: 1px 10px;
+  border-radius: 10px;
+}
+
+.green {
+  background-color: #7abcac;
+}
+
+.yellow {
+  background-color: #d8da79;
+}
+
+.grey {
+  background-color: #c4c4c4;
+}
