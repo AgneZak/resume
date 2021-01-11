@@ -13,12 +13,13 @@
   font-weight: 500;
 }
 
+
 /*------------------------------------*\
   # Header
 \*------------------------------------*/
 
 .header {
-  margin-top: 36px;
+  margin-top: 40px;
   display: flex;
 }
 
@@ -98,4 +99,24 @@ h1 {
 .contact-content {
   display: flex;
   justify-content: space-around;
+}
+
+/*------------------------------------*\
+  # Responsive
+\*------------------------------------*/
+
+@media only screen and (max-width: 600px) {
+  .header-name-container {
+    width: 100%;
+    padding: 40px;
+  }
+
+  .content article, .skills-content{
+    flex-direction: column;
+  }
+  
+  .contact-content{
+    flex-direction: column;
+    align-items: center;
+  }
 }

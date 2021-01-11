@@ -20,3 +20,25 @@
   padding-left: 20px;
   border-left: 2px solid #dcdcdc;
 }
+
+
+@media only screen and (max-width: 600px) {
+
+.experience-content section {
+  padding: 20px;
+}
+
+.experience-content article section:first-child {
+  border-bottom: 2px solid #dcdcdc;
+  border-right: none;
+}
+
+.experience-content article section:last-child {
+  border-top: 2px solid #dcdcdc;
+  border-left: none;
+}
+
+.experience-content section {
+  width: 100%;
+}
+}

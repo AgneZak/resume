@@ -20,3 +20,17 @@ h4 {
   font-size: 16px;
   font-weight: 700;
 }
+
+@media only screen and (max-width: 600px) {
+  .content-box {
+    padding: 20px;
+  }
+
+  .content-box:first-child{
+    margin: initial;
+  }
+
+  .content-box:not(.experience-content){
+    width: inherit;
+  }
+}
