@@ -8,12 +8,18 @@ import Link from "./components/Link";
 import JobContent from "./components/JobContent";
 import FooterItem from "./components/FooterItem";
 
+import translations from "./translations";
+
 function App() {
+  const onSelect = (event) => {
+    console.log(event.target.value);
+  };
   return (
     <div className="App">
       <header className="header">
         <div className="navigation">
           <Select
+            onChange={onSelect}
             options={[
               { value: "en", children: "English" },
               { value: "lt", children: "Lietuviu" },
@@ -27,99 +33,82 @@ function App() {
       </header>
       <main className="content">
         <article>
-          <ContentBox title="Links" className="links-content">
+          <ContentBox
+            title={translations.en.links.title}
+            className="links-content"
+          >
             <List
-              liElements={[
-                {
+              liElements={translations.en.links.linksContent.map(
+                ({ text, img, alt, link, index }) => ({
                   children: (
                     <Link
+                      key={index}
                       image
-                      imgSrc="https://cdn.onlinewebfonts.com/svg/img_24845.png"
-                      imgAlt="linkedin-logo"
-                      link="https://www.linkedin.com/in/agne-zakaite/"
+                      imgSrc={img}
+                      imgAlt={alt}
+                      link={link}
                     >
-                      LINKEDIN/agne-zakaite
+                      {text}
                     </Link>
                   ),
-                },
-                {
-                  children: (
-                    <Link
-                      image
-                      imgSrc="https://icons-for-free.com/iconfiles/png/512/part+1+github-1320568339880199515.png"
-                      imgAlt="github-logo"
-                      link="https://github.com/AgneZak"
-                    >
-                      GITHUB/AgneZak
-                    </Link>
-                  ),
-                },
-                {
-                  children: (
-                    <Link
-                      image
-                      imgSrc="https://cdn3.iconfinder.com/data/icons/picons-social/57/77-behance-512.png"
-                      imgAlt="behance-logo"
-                      link="https://www.behance.net/engaz1"
-                    >
-                      BEHANCE/engaz1
-                    </Link>
-                  ),
-                },
-              ]}
+                })
+              )}
             />
           </ContentBox>
-          <ContentBox title="about me" className="about-content">
-            <p>
-              Full-stack Web developer and experienced Graphic Designer. Skilled
-              in JavaScript, PHP and Adobe design programs. Strong design
-              professional with a Bachelor's degree focused in Graphic Design
-              from Vilnius Academy of Arts. Experience in building
-              object-oriented web applications in JavaScript, HTML5, and CSS,
-              that perform well on all devices. Right now studying
-              React.js and Vue.js
-            </p>
+          <ContentBox
+            title={translations.en.about.title}
+            className="about-content"
+          >
+            <p>{translations.en.about.text}</p>
           </ContentBox>
         </article>
         <article>
-          <ContentBox title="education" className="education-content">
-            <List
-              liElements={[
-                { children: "CODEACADEMY" },
-                { children: "2020 - 2021" },
-                { children: "Higher Education" },
-                { children: "Full-Stack Web Development" },
-              ]}
-            />
-            <Divider />
-            <List
-              liElements={[
-                { children: "VILNIUS ACADEMY OF ARTS" },
-                { children: "2013 - 2017" },
-                { children: "Bachelor's degree" },
-                { children: "Graphic Design" },
-              ]}
-            />
+          <ContentBox
+            title={translations.en.education.title}
+            className="education-content"
+          >
+            {/* where to put key */}
+            {translations.en.education.educationContent.map((list, index) => (
+              <>
+                <List
+                  key={index}
+                  liElements={list.map((children) => ({ children }))}
+                />
+                <Divider />
+              </>
+            ))}
           </ContentBox>
           <section className="skills-content">
-            <ContentBox title="Personal Skills" className="personal-skills">
+            <ContentBox
+              title={translations.en.personalSkills.title}
+              className="personal-skills"
+            >
               <List
-                liElements={[
-                  { children: <Pill color="green">teamwork</Pill> },
-                  { children: <Pill color="green">communication</Pill> },
-                  { children: <Pill color="yellow">organization</Pill> },
-                ]}
+                liElements={translations.en.personalSkills.skills.map(
+                  ({ text, level, index }) => ({
+                    children: (
+                      <Pill key={index} color={level}>
+                        {text}
+                      </Pill>
+                    ),
+                  })
+                )}
               />
             </ContentBox>
-            <ContentBox title="Technical Skills" className="technical-skills">
+            <ContentBox
+              title={translations.en.technicalSkills.title}
+              className="technical-skills"
+            >
               <List
-                liElements={[
-                  { children: <Pill color="green">HTML5</Pill> },
-                  { children: <Pill color="green">css/scss</Pill> },
-                  { children: <Pill color="green">JavaScript</Pill> },
-                  { children: <Pill color="green">PHP</Pill> },
-                  { children: <Pill color="yellow">react.js</Pill> },
-                ]}
+                liElements={translations.en.technicalSkills.skills.map(
+                  ({ text, level, index }) => ({
+                    children: (
+                      <Pill key={index} color={level}>
+                        {text}
+                      </Pill>
+                    ),
+                  })
+                )}
               />
             </ContentBox>
           </section>
@@ -183,39 +172,19 @@ function App() {
       </main>
       <Divider />
       <footer className="contact-content">
-        <FooterItem title="Address">
-          <List liElements={[{ children: "Vilnius" }]} />
-        </FooterItem>
-        <FooterItem title="Contact">
-          <List
-            liElements={[
-              { children: <a href="tel:+37061844137">+370 (6)18 44 137</a> },
-              {
+        {translations.en.footer.footerContent.map((item) => (
+          <FooterItem title={item.title}>
+            <List
+              liElements={item.list.map(({ text, link, index }) => ({
                 children: (
-                  <a href="mailto:azakaite@gmail.com">azakaite@gmail.com</a>
-                ),
-              },
-            ]}
-          />
-        </FooterItem>
-        <FooterItem title="Social">
-          <List
-            liElements={[
-              {
-                children: (
-                  <Link link="https://www.linkedin.com/in/agne-zakaite/">
-                    LinkedIn/agne-zakaite
+                  <Link key={index} link={link}>
+                    {text}
                   </Link>
                 ),
-              },
-              {
-                children: (
-                  <Link link="https://github.com/AgneZak">GitHub/AgneZak</Link>
-                ),
-              },
-            ]}
-          />
-        </FooterItem>
+              }))}
+            />
+          </FooterItem>
+        ))}
       </footer>
     </div>
   );
