@@ -1,8 +1,8 @@
 import Select from "../Select";
 
-function Header () {
+function Header ({lang, setLang}) {
     const onSelect = (event) => {
-        console.log(event.target.value);
+        setLang(event.target.value);
       };
 
     return (
