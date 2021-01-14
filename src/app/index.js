@@ -1,4 +1,6 @@
+import { Fragment } from "react";
 import "./index.css";
+
 import Pill from "./components/Pill";
 import ContentBox from "./components/ContentBox";
 import Divider from "./components/Divider";
@@ -43,7 +45,6 @@ function App() {
                   children: (
                     <Link
                       key={index}
-                      image
                       imgSrc={img}
                       imgAlt={alt}
                       link={link}
@@ -67,15 +68,11 @@ function App() {
             title={translations.en.education.title}
             className="education-content"
           >
-            {/* where to put key */}
             {translations.en.education.educationContent.map((list, index) => (
-              <>
-                <List
-                  key={index}
-                  liElements={list.map((children) => ({ children }))}
-                />
+              <Fragment key={index}>
+                <List liElements={list.map((children) => ({ children }))} />
                 <Divider />
-              </>
+              </Fragment>
             ))}
           </ContentBox>
           <section className="skills-content">
@@ -172,16 +169,20 @@ function App() {
       </main>
       <Divider />
       <footer className="contact-content">
-        {translations.en.footer.footerContent.map((item) => (
-          <FooterItem title={item.title}>
+        {translations.en.footer.footerContent.map((item, index) => (
+          <FooterItem key={index} title={item.title}>
             <List
-              liElements={item.list.map(({ text, link, index }) => ({
-                children: (
-                  <Link key={index} link={link}>
-                    {text}
-                  </Link>
-                ),
-              }))}
+              liElements={item.list.map(({ text, link, index }) => {
+                const Component = link ? Link : "p";
+
+                return {
+                  children: (
+                    <Component key={index} link={link}>
+                      {text}
+                    </Component>
+                  ),
+                };
+              })}
             />
           </FooterItem>
         ))}

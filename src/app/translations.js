@@ -4,7 +4,7 @@ export default {
       footerContent: [
         {
           title: "address",
-          list: [{ text: "Vilnius", link: "" }],
+          list: [{ text: "Vilnius" }],
         },
         {
           title: "contact",
