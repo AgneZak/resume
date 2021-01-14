@@ -8,7 +8,6 @@ import Divider from "./components/Divider";
 import List from "./components/List";
 import Link from "./components/Link";
 import JobContent from "./components/JobContent";
-import FooterItem from "./components/FooterItem";
 
 import translations from "./translations";
 
@@ -17,7 +16,6 @@ function App() {
 
   return (
     <Layout language={lang} setLanguage={setLang}>
-      <main className="content">
         <article>
           <ContentBox
             title={translations[lang].links.title}
@@ -110,28 +108,7 @@ function App() {
               )
             )}
           </article>
-        </ContentBox>
-      </main>
-      <Divider />
-      <footer className="contact-content">
-        {translations[lang].footer.footerContent.map((item, index) => (
-          <FooterItem key={index} title={item.title}>
-            <List
-              liElements={item.list.map(({ text, link, index }) => {
-                const Component = link ? Link : "p";
-
-                return {
-                  children: (
-                    <Component key={index} link={link}>
-                      {text}
-                    </Component>
-                  ),
-                };
-              })}
-            />
-          </FooterItem>
-        ))}
-      </footer>
+        </ContentBox>      
     </Layout>
   );
 }
