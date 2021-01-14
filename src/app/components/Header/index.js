@@ -1,3 +1,4 @@
+import translations from "../../translations";
 import Select from "../Select";
 
 function Header ({lang, setLang}) {
@@ -18,7 +19,7 @@ function Header ({lang, setLang}) {
         </div>
         <div className="header-name-container">
           <h1>AGNE ZAKAITE</h1>
-          <div>PROGRAMMER</div>
+          <div>{translations[lang].header.title}</div>
         </div>
       </header>
     );

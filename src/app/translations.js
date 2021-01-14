@@ -1,5 +1,8 @@
 const translations = {
   en: {
+    header: {
+      title: "PROGRAMMER"
+    },
     footer: {
       footerContent: [
         {
@@ -133,6 +136,9 @@ const translations = {
     },
   },
   lt: {
+    header: {
+      title: "PROGRAMUOTOJA"
+    },
     personalSkills: {
       title: "Asmeninės Savybės",
       skills: [
@@ -178,7 +184,7 @@ const translations = {
         Vue.js`,
     },
     links: {
-      title: "Links",
+      title: "Nuorodos",
       linksContent: [
         {
           text: "LINKEDIN/agne-zakaite",
@@ -203,24 +209,24 @@ const translations = {
       ],
     },
     education: {
-      title: "Education",
+      title: "Išsilavinimas",
       educationContent: [
         [
           "CODEACADEMY",
           "2020 - 2021",
           "Higher Education",
-          "Full-Stack Web Development",
+          "Full-Stack Programuotojas",
         ],
         [
-          "VILNIUS ACADEMY OF ARTS",
+          "VILNIAUS DAILĖS AKADEMIJA",
           "2013 - 2017",
-          "Bachelor's degree",
-          "Graphic Design",
+          "Grafinio dizaino",
+          "Bakalauras",
         ],
       ],
     },
     technicalSkills: {
-      title: "Technical Skills",
+      title: "Techniniai įgūdžiai",
       skills: [
         { text: "html5", level: "green" },
         { text: "css/scss", level: "green" },
@@ -230,27 +236,27 @@ const translations = {
       ],
     },
     work: {
-      title: "work experience",
+      title: "Darbo patirtis",
       workContent: [
         {
-          position: "Graphic Designer",
+          position: "Grafikos dizaineris",
           company: "Freelance",
-          date: "Since 2015",
+          date: "Nuo 2015",
           text: `A freelance designer that designs for web and print. From logos
           to brochures, posters, banners, business cards and more. Skilled
           in:`,
           skills: ["Adobe PhotoShop", "Adobe Illustrator", "Adobe InDesign"],
         },
         {
-          position: "Sales Assistant",
-          company: "Pretendentas JSC",
+          position: "Produkto vadybininkas",
+          company: "UAB Pretendentas",
           date: "2017 - 2019",
           text: `In charge of goods stored in shop - selling coffee machines,
           coffee beans and accessories to B2C, B2B. Active sales on phone,
           offers by e-mail. Also, overseeing and monitoring day to day
           operations of the web store.`,
           skills: [
-            "E-commerce platform: PrestaShop, OXID eShop",
+            "E-prekybos platformos: PrestaShop, OXID eShop",
             "Generating and updating website content - product information, data, photography and editorial",
           ],
         },
