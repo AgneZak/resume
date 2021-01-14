@@ -51,7 +51,7 @@ function App() {
               (list, index, array) => (
                 <Fragment key={index}>
                   <List liElements={list.map((children) => ({ children }))} />
-                  {index == array.length - 1 ? "" : <Divider />}
+                  {index === array.length - 1 ? "" : <Divider />}
                 </Fragment>
               )
             )}

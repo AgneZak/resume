@@ -1,4 +1,4 @@
-export default {
+const translations = {
   en: {
     footer: {
       footerContent: [
@@ -266,3 +266,4 @@ export default {
     },
   },
 };
+export default translations;
