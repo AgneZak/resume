@@ -255,8 +255,8 @@ export default {
           ],
         },
         {
-          position: "Betting Operator",
-          company: "BalticBet JSC",
+          position: "Lažybų operatorius",
+          company: "UAB BalticBet",
           date: "2017",
           text: `Taking bets for betting games, pre-match and live matches.
           Knowledge in betting systems such as:`,
