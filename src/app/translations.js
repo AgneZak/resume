@@ -96,6 +96,41 @@ export default {
         { text: "react.js", level: "yellow" },
       ],
     },
+    work: {
+      title: "work experience",
+      workContent: [
+        {
+          position: "Graphic Designer",
+          company: "Freelance",
+          date: "Since 2015",
+          text: `A freelance designer that designs for web and print. From logos
+          to brochures, posters, banners, business cards and more. Skilled
+          in:`,
+          skills: ["Adobe PhotoShop", "Adobe Illustrator", "Adobe InDesign"],
+        },
+        {
+          position: "Sales Assistant",
+          company: "Pretendentas JSC",
+          date: "2017 - 2019",
+          text: `In charge of goods stored in shop - selling coffee machines,
+          coffee beans and accessories to B2C, B2B. Active sales on phone,
+          offers by e-mail. Also, overseeing and monitoring day to day
+          operations of the web store.`,
+          skills: [
+            "E-commerce platform: PrestaShop, OXID eShop",
+            "Generating and updating website content - product information, data, photography and editorial",
+          ],
+        },
+        {
+          position: "Betting Operator",
+          company: "BalticBet JSC",
+          date: "2017",
+          text: `Taking bets for betting games, pre-match and live matches.
+          Knowledge in betting systems such as:`,
+          skills: ["BETTY", "Bet Games"],
+        },
+      ],
+    },
   },
   lt: {
     footer: "Labai gera paraštė 📄",

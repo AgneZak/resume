@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import "./index.css";
 
+import Layout from "./components/Layout";
 import Pill from "./components/Pill";
 import ContentBox from "./components/ContentBox";
 import Divider from "./components/Divider";
@@ -13,26 +14,9 @@ import FooterItem from "./components/FooterItem";
 import translations from "./translations";
 
 function App() {
-  const onSelect = (event) => {
-    console.log(event.target.value);
-  };
+  
   return (
-    <div className="App">
-      <header className="header">
-        <div className="navigation">
-          <Select
-            onChange={onSelect}
-            options={[
-              { value: "en", children: "English" },
-              { value: "lt", children: "Lietuviu" },
-            ]}
-          />
-        </div>
-        <div className="header-name-container">
-          <h1>AGNE ZAKAITE</h1>
-          <div>PROGRAMMER</div>
-        </div>
-      </header>
+    <Layout>
       <main className="content">
         <article>
           <ContentBox
@@ -43,12 +27,7 @@ function App() {
               liElements={translations.en.links.linksContent.map(
                 ({ text, img, alt, link, index }) => ({
                   children: (
-                    <Link
-                      key={index}
-                      imgSrc={img}
-                      imgAlt={alt}
-                      link={link}
-                    >
+                    <Link key={index} imgSrc={img} imgAlt={alt} link={link}>
                       {text}
                     </Link>
                   ),
@@ -68,10 +47,10 @@ function App() {
             title={translations.en.education.title}
             className="education-content"
           >
-            {translations.en.education.educationContent.map((list, index) => (
+            {translations.en.education.educationContent.map((list, index, array) => (
               <Fragment key={index}>
                 <List liElements={list.map((children) => ({ children }))} />
-                <Divider />
+                {index == array.length - 1 ? "" : <Divider />}
               </Fragment>
             ))}
           </ContentBox>
@@ -110,60 +89,14 @@ function App() {
             </ContentBox>
           </section>
         </article>
-        <ContentBox title="Work experience" className="experience-content">
+        <ContentBox title={translations.en.work.title} className="experience-content">
           <article>
-            <JobContent
-              jobPosition="Graphic Designer"
-              company="Freelance"
-              date="Since 2015"
-            >
-              <p>
-                A freelance designer that designs for web and print. From logos
-                to brochures, posters, banners, business cards and more. Skilled
-                in:
-              </p>
-              <List
-                liElements={[
-                  { children: "Adobe PhotoShop" },
-                  { children: "Adobe Illustrator" },
-                  { children: "Adobe InDesign" },
-                ]}
-              />
-            </JobContent>
-            <JobContent
-              jobPosition="Sales Assistant"
-              company="Pretendentas JSC"
-              date="2017 - 2019"
-            >
-              <p>
-                In charge of goods stored in shop - selling coffee machines,
-                coffee beans and accessories to B2C, B2B. Active sales on phone,
-                offers by e-mail. Also, overseeing and monitoring day to day
-                operations of the web store.
-              </p>
-              <List
-                liElements={[
-                  { children: "E-commerce platform: PrestaShop, OXID eShop" },
-                  {
-                    children:
-                      "Generating and updating website content - product information, data, photography and editorial",
-                  },
-                ]}
-              />
-            </JobContent>
-            <JobContent
-              jobPosition="Betting Operator"
-              company="BalticBet JSC"
-              date="2017"
-            >
-              <p>
-                Taking bets for betting games, pre-match and live matches.
-                Knowledge in betting systems such as:
-              </p>
-              <List
-                liElements={[{ children: "BETTY" }, { children: "Bet Games" }]}
-              />
-            </JobContent>
+          {translations.en.work.workContent.map(({position, company, date, text, skills}, index) => (
+              <JobContent key={index} jobPosition ={position} company={company} date={date}>
+                <p>{text}</p>
+                <List liElements={skills.map((children) => ({ children }))} />
+              </JobContent>
+            ))}
           </article>
         </ContentBox>
       </main>
@@ -187,7 +120,7 @@ function App() {
           </FooterItem>
         ))}
       </footer>
-    </div>
+    </Layout>
   );
 }
 
